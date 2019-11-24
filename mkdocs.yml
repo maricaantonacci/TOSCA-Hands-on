@@ -1,0 +1,25 @@
+site_name: HandsOn-INFN-2019
+theme:
+  name: material
+  logo:
+    icon: cloud_circle
+  palette:
+    primary: 'indigo'
+    accent: 'Red'
+nav:
+- Home: 'README.md'
+- TOSCA Orchestration:
+  - Overview: orchestrator/overview.md
+  - TOSCA Usage Guide: orchestrator/tosca_usage_guide.md
+  - Preflight: 
+     - Setup oidc-agent: orchestrator/oidc_agent.md
+     - Setup orchent: orchestrator/orchent.md
+  - Run your first deployment:
+    - Example - Elasticsearch template: orchestrator/elasticsearch_example.md 
+repo_url: 'https://github.com/maricaantonacci/HandsOn-INFN-2019'
+markdown_extensions: 
+ - codehilite:
+    linenums: true
+ - admonition:
+ - pymdownx.superfences:
+
