@@ -16,7 +16,7 @@ nav:
      - Setup orchent: orchestrator/orchent.md
   - Run your first deployment:
     - Example - Elasticsearch template: orchestrator/elasticsearch_example.md 
-repo_url: 'https://github.com/maricaantonacci/HandsOn-INFN-2019'
+repo_url: 'https://github.com/maricaantonacci/TOSCA-Hands-on'
 markdown_extensions: 
  - codehilite:
     linenums: true
