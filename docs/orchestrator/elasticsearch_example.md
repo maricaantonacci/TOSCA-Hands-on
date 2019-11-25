@@ -1,6 +1,6 @@
 ### [◀](../README.md)
 
-# Installing Elasticsearch and Kibana with ansible
+## Installing Elasticsearch and Kibana with ansible
 
 ``` yaml tab="Elasticsearch playbook"
 - name: Simple Elasticsearch Example
@@ -31,7 +31,9 @@
     kibana_elasticsearch_password: 12qwas
 ```
 
-# Elasticsearch template
+## Modeling the topology with TOSCA 
+
+### Elasticsearch SoftwareComponent node
 
 ``` yaml tab="tosca template excerpt" hl_lines="2"
     elasticsearch:
@@ -109,7 +111,7 @@
     - role: elastic.elasticsearch
 ```
 
-## Add Kibana
+### Kibana SoftwareComponent node
 
 ``` yaml tab="tosca template excerpt" hl_lines="2"
     kibana:
@@ -166,6 +168,246 @@
     - role: maricaantonacci.kibana
 ```
 
+Now let's build the full topology template, adding the server node(s). 
 
-    
+_Don't forget to request port 5601 for accessing kibana dashboard!_
+
+
+
+#### 1. All-in-One installation
+
+``` yaml tab=" "
+Click on the "TOSCA template" tab to see a possible solution.
+```
+
+``` yaml tab="TOSCA template"
+tosca_definitions_version: tosca_simple_yaml_1_0
+
+imports:
+  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s_add_es/custom_types.yaml
+
+description: >
+  Start Elasticsearch + Kibana on a Virtual Machine
+
+topology_template:
+
+  inputs:
+    num_cpus:
+      type: integer
+      description: Number of virtual cpus for the VM
+      default: 2
+      constraints:
+      - valid_values: [ 2, 4 ]
+    mem_size:
+      type: scalar-unit.size
+      description: Amount of memory for the VM
+      default: 4 GB
+      constraints:
+      - valid_values: [ 4 GB, 8 GB ]
+
+    es_version:
+      type: string
+      default: 7.4.1
+      description: Elasticsearch version
+
+    es_bind_address:
+      type: string
+      default: 0.0.0.0
+      description: Bind address for Elasticsearch service
+
+    es_password:
+      type: string
+      required: true
+      description: Password for user elastic
+
+    kibana_password:
+      type: string
+      required: true
+      description: Password for kibana system user
+
+  node_templates:
+
+    elasticsearch:
+      type: tosca.nodes.indigo.Elasticsearch
+      properties:
+        es_version:  { get_input: es_version }
+        bind_address: { get_input: es_bind_address }
+        elastic_password: { get_input: es_password }
+        kibana_system_password: { get_input: kibana_password }
+      requirements:
+        - host: kibana_es_server
+
+    kibana:
+      type: tosca.nodes.indigo.Kibana
+      properties:
+        kibana_version:  { get_input: es_version }
+        elasticsearch_password: { get_input: kibana_password }
+      requirements:
+        - host: kibana_es_server
+        - esearch_endpoint: elasticsearch
+
+    kibana_es_server:
+      type: tosca.nodes.indigo.Compute
+      capabilities:
+        endpoint:
+          properties:
+            network_name: PUBLIC
+            ports:
+              kibana:
+                protocol: tcp
+                source: 5601
+        host:
+          properties:
+            num_cpus: { get_input: num_cpus }
+            mem_size: { get_input: mem_size }
+        os:
+          properties:
+            distribution: ubuntu
+            type: linux
+            version: 16.04
+
+  outputs:
+    kibana_endpoint:
+      value: { concat: [ 'http://', get_attribute: [ kibana_es_server, public_address, 0 ], ':5601' ] }
+    node_ip:
+      value: { get_attribute: [ kibana_es_server, public_address, 0 ] }
+    node_creds:
+      value: { get_attribute: [ kibana_es_server, endpoint, credential, 0 ] }
+```
+
+#### 2. Installation on separate servers
+
+``` yaml tab=" "
+Click on the "TOSCA template" tab to see a possible solution.
+```
+
+``` yaml tab="TOSCA template"
+tosca_definitions_version: tosca_simple_yaml_1_0
+
+imports:
+  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s_add_es/custom_types.yaml
+
+description: >
+  Start Elasticsearch + Kibana on separate Virtual Machines
+
+topology_template:
+
+  inputs:
+    num_cpus:
+      type: integer
+      description: Number of virtual cpus for the VM
+      default: 2
+      constraints:
+      - valid_values: [ 2, 4 ]
+    mem_size:
+      type: scalar-unit.size
+      description: Amount of memory for the VM
+      default: 4 GB
+      constraints:
+      - valid_values: [ 4 GB, 8 GB ]
+
+    es_version:
+      type: string
+      default: 7.4.1
+      description: Elasticsearch version
+
+    es_bind_address:
+      type: string
+      default: 0.0.0.0
+      description: Bind address for Elasticsearch service
+
+    es_password:
+      type: string
+      required: true
+      description: Password for user elastic
+
+    kibana_password:
+      type: string
+      required: true
+      description: Password for kibana system user
+
+  node_templates:
+
+    elasticsearch:
+      type: tosca.nodes.indigo.Elasticsearch
+      properties:
+        es_version:  { get_input: es_version }
+        bind_address: { get_input: es_bind_address }
+        elastic_password: { get_input: es_password }
+        kibana_system_password: { get_input: kibana_password }
+      requirements:
+        - host: es_server
+
+    kibana:
+      type: tosca.nodes.indigo.Kibana
+      properties:
+        kibana_version:  { get_input: es_version }
+        elasticsearch_password: { get_input: kibana_password }
+        elasticsearch_url: { concat: [ 'http://', { get_attribute: [ es_server, private_address, 0 ] }, ":9200" ] }
+      requirements:
+        - host: kibana_server
+        - esearch_endpoint: elasticsearch
+
+    es_server:
+      type: tosca.nodes.indigo.Compute
+      capabilities:
+        host:
+          properties:
+            num_cpus: { get_input: num_cpus }
+            mem_size: { get_input: mem_size }
+        os:
+          properties:
+            distribution: ubuntu
+            type: linux
+            version: 16.04
+
+    kibana_server:
+      type: tosca.nodes.indigo.Compute
+      capabilities:
+        endpoint:
+          properties:
+            network_name: PUBLIC
+            ports:
+              kibana:
+                protocol: tcp
+                source: 5601
+        host:
+          properties:
+            num_cpus: { get_input: num_cpus }
+            mem_size: { get_input: mem_size }
+        os:
+          properties:
+            distribution: ubuntu
+            type: linux
+            version: 16.04
+
+  outputs:
+    kibana_endpoint:
+      value: { concat: [ 'http://', get_attribute: [ kibana_server, public_address, 0 ], ':5601' ] }
+    kibana_node_ip:
+      value: { get_attribute: [ kibana_server, public_address, 0 ] }
+    kibana_node_creds:
+      value: { get_attribute: [ kibana_server, endpoint, credential, 0 ] }
+```
+
+
+### Run the deployment 
+
+Choose one of the two topologies and submit the template to the Orchestrator:
+
+``` bash
+orchent depcreate template.yml '{ "es_password": "****", "kibana_password": "****" }'
+```    
+
+Monitor the status of the deployment:
+
+``` bash
+orchent depshow <dep UUID>
+```
+
+You could also connect to the dashboard to follow the deployment log:
+
+`dashboard URL: https://dodas-paas.cloud.ba.infn.it`
+
+What do you see in the log?
 

@@ -6,7 +6,7 @@
 
 Admin and user guides are available [here](https://indigo-dc.gitbook.io/orchent/)
 
-## Installation
+## Verify installation
 
 ```bash
 orchent --version
@@ -23,7 +23,7 @@ export ORCHENT_AGENT_ACCOUNT=dodas
 ```
 
 Moreover, you need to configure the Orchestrator URL you want to connect to:
-```bash
+```bash hl_lines="1"
 export ORCHENT_URL=https://dodas-paas.cloud.ba.infn.it/orchestrator
 ```
 

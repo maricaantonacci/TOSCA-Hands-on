@@ -10,13 +10,14 @@ nav:
 - Home: 'README.md'
 - TOSCA Orchestration:
   - Overview: orchestrator/overview.md
-  - TOSCA Usage Guide: orchestrator/tosca_usage_guide.md
-  - Preflight: 
-     - Setup oidc-agent: orchestrator/oidc_agent.md
-     - Setup orchent: orchestrator/orchent.md
+  - Enviroment setup: 
+     - Configure oidc-agent: orchestrator/oidc_agent.md
+     - Configure orchent: orchestrator/orchent.md
   - Run your first deployment:
-    - Assembly the TOSCA template: orchestrator/tosca_blocks.md
+    - Hello world TOSCA template: orchestrator/tosca_blocks.md
     - Example - Elasticsearch template: orchestrator/elasticsearch_example.md 
+  - Appendix:
+    - TOSCA Usage Guide: orchestrator/tosca_usage_guide.md
 repo_url: 'https://github.com/maricaantonacci/TOSCA-Hands-on'
 markdown_extensions: 
  - codehilite:

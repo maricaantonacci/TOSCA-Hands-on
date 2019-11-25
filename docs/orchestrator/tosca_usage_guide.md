@@ -12,7 +12,7 @@ topology_template:
   inputs: <input_parameter_list>
   outputs: <output_parameter_list>
   node_templates: <node_template_list>
-  relationship_templates: <relationship_template_list>
+  outputs: <output_list>
   policies:
     - <policy_definition_list>
 ```
