@@ -266,28 +266,16 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../tosca_usage_guide/" title="TOSCA Usage Guide" class="md-nav__link">
-      TOSCA Usage Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
-    <label class="md-nav__link" for="nav-2-3">
-      Preflight
+    <label class="md-nav__link" for="nav-2-2">
+      Enviroment setup
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
-        Preflight
+      <label class="md-nav__title" for="nav-2-2">
+        Enviroment setup
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -298,8 +286,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../oidc_agent/" title="Setup oidc-agent" class="md-nav__link">
-      Setup oidc-agent
+    <a href="../oidc_agent/" title="Configure oidc-agent" class="md-nav__link">
+      Configure oidc-agent
     </a>
   </li>
 
@@ -310,8 +298,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../orchent/" title="Setup orchent" class="md-nav__link">
-      Setup orchent
+    <a href="../orchent/" title="Configure orchent" class="md-nav__link">
+      Configure orchent
     </a>
   </li>
 
@@ -330,13 +318,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
-    <label class="md-nav__link" for="nav-2-4">
+    <label class="md-nav__link" for="nav-2-3">
       Run your first deployment
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
+      <label class="md-nav__title" for="nav-2-3">
         Run your first deployment
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -348,8 +336,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../tosca_blocks/" title="Assembly the TOSCA template" class="md-nav__link">
-      Assembly the TOSCA template
+    <a href="../tosca_blocks/" title="Hello world TOSCA template" class="md-nav__link">
+      Hello world TOSCA template
     </a>
   </li>
 
@@ -365,13 +353,135 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Example - Elasticsearch template
+      </label>
     
     <a href="./" title="Example - Elasticsearch template" class="md-nav__link md-nav__link--active">
       Example - Elasticsearch template
     </a>
     
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ◀
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-elasticsearch-and-kibana-with-ansible" class="md-nav__link">
+    Installing Elasticsearch and Kibana with ansible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-the-topology-with-tosca" class="md-nav__link">
+    Modeling the topology with TOSCA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-softwarecomponent-node" class="md-nav__link">
+    Elasticsearch SoftwareComponent node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana-softwarecomponent-node" class="md-nav__link">
+    Kibana SoftwareComponent node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-all-in-one-installation" class="md-nav__link">
+    1. All-in-One installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation-on-separate-servers" class="md-nav__link">
+    2. Installation on separate servers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-deployment" class="md-nav__link">
+    Run the deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tosca_usage_guide/" title="TOSCA Usage Guide" class="md-nav__link">
+      TOSCA Usage Guide
+    </a>
   </li>
 
         
@@ -399,8 +509,83 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    ◀
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-elasticsearch-and-kibana-with-ansible" class="md-nav__link">
+    Installing Elasticsearch and Kibana with ansible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modeling-the-topology-with-tosca" class="md-nav__link">
+    Modeling the topology with TOSCA
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elasticsearch-softwarecomponent-node" class="md-nav__link">
+    Elasticsearch SoftwareComponent node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kibana-softwarecomponent-node" class="md-nav__link">
+    Kibana SoftwareComponent node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-all-in-one-installation" class="md-nav__link">
+    1. All-in-One installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation-on-separate-servers" class="md-nav__link">
+    2. Installation on separate servers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-deployment" class="md-nav__link">
+    Run the deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -415,8 +600,10 @@
                   <a href="https://github.com/maricaantonacci/TOSCA-Hands-on/edit/master/docs/orchestrator/elasticsearch_example.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
+                  <h1>Example - Elasticsearch template</h1>
+                
                 <h3 id="_1"><a href="../..">◀</a></h3>
-<h1 id="installing-elasticsearch-and-kibana-with-ansible">Installing Elasticsearch and Kibana with ansible</h1>
+<h2 id="installing-elasticsearch-and-kibana-with-ansible">Installing Elasticsearch and Kibana with ansible</h2>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Elasticsearch playbook</label>
@@ -471,7 +658,8 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<h1 id="elasticsearch-template">Elasticsearch template</h1>
+<h2 id="modeling-the-topology-with-tosca">Modeling the topology with TOSCA</h2>
+<h3 id="elasticsearch-softwarecomponent-node">Elasticsearch SoftwareComponent node</h3>
 <div class="superfences-tabs">
 <input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
 <label for="__tab_2_0">tosca template excerpt</label>
@@ -617,7 +805,7 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<h2 id="add-kibana">Add Kibana</h2>
+<h3 id="kibana-softwarecomponent-node">Kibana SoftwareComponent node</h3>
 <div class="superfences-tabs">
 <input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
 <label for="__tab_3_0">tosca template excerpt</label>
@@ -721,6 +909,440 @@
 </pre></div>
 </td></tr></table></div>
 </div>
+<p>Now let's build the full topology template, adding the server node(s). </p>
+<p><em>Don't forget to request port 5601 for accessing kibana dashboard!</em></p>
+<h4 id="1-all-in-one-installation">1. All-in-One installation</h4>
+<div class="superfences-tabs">
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0"> </label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Click on the &quot;TOSCA template&quot; tab to see a possible solution.</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">TOSCA template</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">tosca_definitions_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca_simple_yaml_1_0</span>
+
+<span class="nt">imports</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">indigo_custom_types</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s_add_es/custom_types.yaml</span>
+
+<span class="nt">description</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+  <span class="no">Start Elasticsearch + Kibana on a Virtual Machine</span>
+
+<span class="nt">topology_template</span><span class="p">:</span>
+
+  <span class="nt">inputs</span><span class="p">:</span>
+    <span class="nt">num_cpus</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of virtual cpus for the VM</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">valid_values</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">2</span><span class="p p-Indicator">,</span> <span class="nv">4</span> <span class="p p-Indicator">]</span>
+    <span class="nt">mem_size</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scalar-unit.size</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Amount of memory for the VM</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4 GB</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">valid_values</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">4 GB</span><span class="p p-Indicator">,</span> <span class="nv">8 GB</span> <span class="p p-Indicator">]</span>
+
+    <span class="nt">es_version</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7.4.1</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Elasticsearch version</span>
+
+    <span class="nt">es_bind_address</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Bind address for Elasticsearch service</span>
+
+    <span class="nt">es_password</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Password for user elastic</span>
+
+    <span class="nt">kibana_password</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Password for kibana system user</span>
+
+  <span class="nt">node_templates</span><span class="p">:</span>
+
+    <span class="nt">elasticsearch</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Elasticsearch</span>
+      <span class="nt">properties</span><span class="p">:</span>
+        <span class="nt">es_version</span><span class="p">:</span>  <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_version</span> <span class="p p-Indicator">}</span>
+        <span class="nt">bind_address</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_bind_address</span> <span class="p p-Indicator">}</span>
+        <span class="nt">elastic_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_password</span> <span class="p p-Indicator">}</span>
+        <span class="nt">kibana_system_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">kibana_password</span> <span class="p p-Indicator">}</span>
+      <span class="nt">requirements</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kibana_es_server</span>
+
+    <span class="nt">kibana</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Kibana</span>
+      <span class="nt">properties</span><span class="p">:</span>
+        <span class="nt">kibana_version</span><span class="p">:</span>  <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_version</span> <span class="p p-Indicator">}</span>
+        <span class="nt">elasticsearch_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">kibana_password</span> <span class="p p-Indicator">}</span>
+      <span class="nt">requirements</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kibana_es_server</span>
+        <span class="p p-Indicator">-</span> <span class="nt">esearch_endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
+
+    <span class="nt">kibana_es_server</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Compute</span>
+      <span class="nt">capabilities</span><span class="p">:</span>
+        <span class="nt">endpoint</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">network_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PUBLIC</span>
+            <span class="nt">ports</span><span class="p">:</span>
+              <span class="nt">kibana</span><span class="p">:</span>
+                <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+                <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5601</span>
+        <span class="nt">host</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">num_cpus</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">num_cpus</span> <span class="p p-Indicator">}</span>
+            <span class="nt">mem_size</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">mem_size</span> <span class="p p-Indicator">}</span>
+        <span class="nt">os</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">distribution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+            <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linux</span>
+            <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16.04</span>
+
+  <span class="nt">outputs</span><span class="p">:</span>
+    <span class="nt">kibana_endpoint</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> concat</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;http://&#39;</span><span class="p p-Indicator">,</span> <span class="nv">get_attribute</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">kibana_es_server</span><span class="p p-Indicator">,</span> <span class="nv">public_address</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">],</span> <span class="s">&#39;:5601&#39;</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+    <span class="nt">node_ip</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_attribute</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">kibana_es_server</span><span class="p p-Indicator">,</span> <span class="nv">public_address</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+    <span class="nt">node_creds</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_attribute</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">kibana_es_server</span><span class="p p-Indicator">,</span> <span class="nv">endpoint</span><span class="p p-Indicator">,</span> <span class="nv">credential</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h4 id="2-installation-on-separate-servers">2. Installation on separate servers</h4>
+<div class="superfences-tabs">
+<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
+<label for="__tab_5_0"> </label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Click on the &quot;TOSCA template&quot; tab to see a possible solution.</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_5" type="radio" id="__tab_5_1" />
+<label for="__tab_5_1">TOSCA template</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">tosca_definitions_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca_simple_yaml_1_0</span>
+
+<span class="nt">imports</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">indigo_custom_types</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s_add_es/custom_types.yaml</span>
+
+<span class="nt">description</span><span class="p">:</span> <span class="p p-Indicator">&gt;</span>
+  <span class="no">Start Elasticsearch + Kibana on separate Virtual Machines</span>
+
+<span class="nt">topology_template</span><span class="p">:</span>
+
+  <span class="nt">inputs</span><span class="p">:</span>
+    <span class="nt">num_cpus</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Number of virtual cpus for the VM</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">valid_values</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">2</span><span class="p p-Indicator">,</span> <span class="nv">4</span> <span class="p p-Indicator">]</span>
+    <span class="nt">mem_size</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scalar-unit.size</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Amount of memory for the VM</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4 GB</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">valid_values</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">4 GB</span><span class="p p-Indicator">,</span> <span class="nv">8 GB</span> <span class="p p-Indicator">]</span>
+
+    <span class="nt">es_version</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7.4.1</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Elasticsearch version</span>
+
+    <span class="nt">es_bind_address</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">default</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Bind address for Elasticsearch service</span>
+
+    <span class="nt">es_password</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Password for user elastic</span>
+
+    <span class="nt">kibana_password</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Password for kibana system user</span>
+
+  <span class="nt">node_templates</span><span class="p">:</span>
+
+    <span class="nt">elasticsearch</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Elasticsearch</span>
+      <span class="nt">properties</span><span class="p">:</span>
+        <span class="nt">es_version</span><span class="p">:</span>  <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_version</span> <span class="p p-Indicator">}</span>
+        <span class="nt">bind_address</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_bind_address</span> <span class="p p-Indicator">}</span>
+        <span class="nt">elastic_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_password</span> <span class="p p-Indicator">}</span>
+        <span class="nt">kibana_system_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">kibana_password</span> <span class="p p-Indicator">}</span>
+      <span class="nt">requirements</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">es_server</span>
+
+    <span class="nt">kibana</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Kibana</span>
+      <span class="nt">properties</span><span class="p">:</span>
+        <span class="nt">kibana_version</span><span class="p">:</span>  <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">es_version</span> <span class="p p-Indicator">}</span>
+        <span class="nt">elasticsearch_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">kibana_password</span> <span class="p p-Indicator">}</span>
+        <span class="nt">elasticsearch_url</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> concat</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;http://&#39;</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">{</span><span class="nt"> get_attribute</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">es_server</span><span class="p p-Indicator">,</span> <span class="nv">private_address</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">},</span> <span class="s">&quot;:9200&quot;</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+      <span class="nt">requirements</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kibana_server</span>
+        <span class="p p-Indicator">-</span> <span class="nt">esearch_endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
+
+    <span class="nt">es_server</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Compute</span>
+      <span class="nt">capabilities</span><span class="p">:</span>
+        <span class="nt">host</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">num_cpus</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">num_cpus</span> <span class="p p-Indicator">}</span>
+            <span class="nt">mem_size</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">mem_size</span> <span class="p p-Indicator">}</span>
+        <span class="nt">os</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">distribution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+            <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linux</span>
+            <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16.04</span>
+
+    <span class="nt">kibana_server</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Compute</span>
+      <span class="nt">capabilities</span><span class="p">:</span>
+        <span class="nt">endpoint</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">network_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PUBLIC</span>
+            <span class="nt">ports</span><span class="p">:</span>
+              <span class="nt">kibana</span><span class="p">:</span>
+                <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+                <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5601</span>
+        <span class="nt">host</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">num_cpus</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">num_cpus</span> <span class="p p-Indicator">}</span>
+            <span class="nt">mem_size</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">mem_size</span> <span class="p p-Indicator">}</span>
+        <span class="nt">os</span><span class="p">:</span>
+          <span class="nt">properties</span><span class="p">:</span>
+            <span class="nt">distribution</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ubuntu</span>
+            <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linux</span>
+            <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">16.04</span>
+
+  <span class="nt">outputs</span><span class="p">:</span>
+    <span class="nt">kibana_endpoint</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> concat</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;http://&#39;</span><span class="p p-Indicator">,</span> <span class="nv">get_attribute</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">kibana_server</span><span class="p p-Indicator">,</span> <span class="nv">public_address</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">],</span> <span class="s">&#39;:5601&#39;</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+    <span class="nt">kibana_node_ip</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_attribute</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">kibana_server</span><span class="p p-Indicator">,</span> <span class="nv">public_address</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+    <span class="nt">kibana_node_creds</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_attribute</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">kibana_server</span><span class="p p-Indicator">,</span> <span class="nv">endpoint</span><span class="p p-Indicator">,</span> <span class="nv">credential</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h3 id="run-the-deployment">Run the deployment</h3>
+<p>Choose one of the two topologies and submit the template to the Orchestrator:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>orchent depcreate template.yml <span class="s1">&#39;{ &quot;es_password&quot;: &quot;****&quot;, &quot;kibana_password&quot;: &quot;****&quot; }&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Monitor the status of the deployment:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>orchent depshow &lt;dep UUID&gt;
+</pre></div>
+</td></tr></table>
+
+<p>You could also connect to the dashboard to follow the deployment log:</p>
+<p><code>dashboard URL: https://dodas-paas.cloud.ba.infn.it</code></p>
+<p>What do you see in the log?</p>
                 
                   
                 
@@ -741,7 +1363,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../tosca_blocks/" title="Assembly the TOSCA template" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tosca_blocks/" title="Hello world TOSCA template" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -750,11 +1372,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Assembly the TOSCA template
+                Hello world TOSCA template
               </span>
             </div>
           </a>
         
+        
+          <a href="../tosca_usage_guide/" title="TOSCA Usage Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TOSCA Usage Guide
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

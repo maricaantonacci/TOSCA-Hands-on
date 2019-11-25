@@ -265,38 +265,17 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="TOSCA Usage Guide" class="md-nav__link md-nav__link--active">
-      TOSCA Usage Guide
-    </a>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
-    <label class="md-nav__link" for="nav-2-3">
-      Preflight
+    <label class="md-nav__link" for="nav-2-2">
+      Enviroment setup
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
-        Preflight
+      <label class="md-nav__title" for="nav-2-2">
+        Enviroment setup
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -307,8 +286,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../oidc_agent/" title="Setup oidc-agent" class="md-nav__link">
-      Setup oidc-agent
+    <a href="../oidc_agent/" title="Configure oidc-agent" class="md-nav__link">
+      Configure oidc-agent
     </a>
   </li>
 
@@ -319,8 +298,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../orchent/" title="Setup orchent" class="md-nav__link">
-      Setup orchent
+    <a href="../orchent/" title="Configure orchent" class="md-nav__link">
+      Configure orchent
     </a>
   </li>
 
@@ -337,13 +316,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
     
-    <label class="md-nav__link" for="nav-2-4">
+    <label class="md-nav__link" for="nav-2-3">
       Run your first deployment
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
+      <label class="md-nav__title" for="nav-2-3">
         Run your first deployment
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -355,8 +334,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../tosca_blocks/" title="Assembly the TOSCA template" class="md-nav__link">
-      Assembly the TOSCA template
+    <a href="../tosca_blocks/" title="Hello world TOSCA template" class="md-nav__link">
+      Hello world TOSCA template
     </a>
   </li>
 
@@ -370,6 +349,53 @@
     <a href="../elasticsearch_example/" title="Example - Elasticsearch template" class="md-nav__link">
       Example - Elasticsearch template
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
+    
+    <label class="md-nav__link" for="nav-2-4">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="TOSCA Usage Guide" class="md-nav__link md-nav__link--active">
+      TOSCA Usage Guide
+    </a>
+    
   </li>
 
         
@@ -429,7 +455,7 @@
   <span class="nt">inputs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;input_parameter_list&gt;</span>
   <span class="nt">outputs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;output_parameter_list&gt;</span>
   <span class="nt">node_templates</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;node_template_list&gt;</span>
-  <span class="nt">relationship_templates</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;relationship_template_list&gt;</span>
+  <span class="nt">outputs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;output_list&gt;</span>
   <span class="nt">policies</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;policy_definition_list&gt;</span>
 </pre></div>
@@ -838,7 +864,7 @@ Use this function for inputs parameters.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../overview/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../elasticsearch_example/" title="Example - Elasticsearch template" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -847,25 +873,11 @@ Use this function for inputs parameters.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overview
+                Example - Elasticsearch template
               </span>
             </div>
           </a>
         
-        
-          <a href="../oidc_agent/" title="Setup oidc-agent" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Setup oidc-agent
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

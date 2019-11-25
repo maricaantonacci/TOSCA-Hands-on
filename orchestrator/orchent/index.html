@@ -36,7 +36,7 @@
     
     
       
-        <title>Setup orchent - TOSCA Hands-On (INFN-2019)</title>
+        <title>Configure orchent - TOSCA Hands-On (INFN-2019)</title>
       
     
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Setup orchent
+                Configure orchent
               
             </span>
           
@@ -265,31 +265,19 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../tosca_usage_guide/" title="TOSCA Usage Guide" class="md-nav__link">
-      TOSCA Usage Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
-    <label class="md-nav__link" for="nav-2-3">
-      Preflight
+    <label class="md-nav__link" for="nav-2-2">
+      Enviroment setup
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
-        Preflight
+      <label class="md-nav__title" for="nav-2-2">
+        Enviroment setup
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -300,8 +288,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../oidc_agent/" title="Setup oidc-agent" class="md-nav__link">
-      Setup oidc-agent
+    <a href="../oidc_agent/" title="Configure oidc-agent" class="md-nav__link">
+      Configure oidc-agent
     </a>
   </li>
 
@@ -320,10 +308,58 @@
       
     
     
-    <a href="./" title="Setup orchent" class="md-nav__link md-nav__link--active">
-      Setup orchent
+    <a href="./" title="Configure orchent" class="md-nav__link md-nav__link--active">
+      Configure orchent
     </a>
     
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Run your first deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Run your first deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tosca_blocks/" title="Hello world TOSCA template" class="md-nav__link">
+      Hello world TOSCA template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../elasticsearch_example/" title="Example - Elasticsearch template" class="md-nav__link">
+      Example - Elasticsearch template
+    </a>
   </li>
 
         
@@ -342,11 +378,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
     <label class="md-nav__link" for="nav-2-4">
-      Run your first deployment
+      Appendix
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-4">
-        Run your first deployment
+        Appendix
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -357,20 +393,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../tosca_blocks/" title="Assembly the TOSCA template" class="md-nav__link">
-      Assembly the TOSCA template
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../elasticsearch_example/" title="Example - Elasticsearch template" class="md-nav__link">
-      Example - Elasticsearch template
+    <a href="../tosca_usage_guide/" title="TOSCA Usage Guide" class="md-nav__link">
+      TOSCA Usage Guide
     </a>
   </li>
 
@@ -419,7 +443,7 @@
 <h1 id="setup-orchent">Setup orchent</h1>
 <p><code>orchent</code> is a command line tool to ease the interaction with the PaaS Orchestrator.</p>
 <p>Admin and user guides are available <a href="https://indigo-dc.gitbook.io/orchent/">here</a></p>
-<h2 id="installation">Installation</h2>
+<h2 id="verify-installation">Verify installation</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>orchent --version
 </pre></div>
 </td></tr></table>
@@ -433,8 +457,8 @@ You need to configure the following environment variable in your <code>.bashrc</
 </td></tr></table>
 
 <p>Moreover, you need to configure the Orchestrator URL you want to connect to:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">ORCHENT_URL</span><span class="o">=</span>https://dodas-paas.cloud.ba.infn.it/orchestrator
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll"><span class="nb">export</span> <span class="nv">ORCHENT_URL</span><span class="o">=</span>https://dodas-paas.cloud.ba.infn.it/orchestrator
+</span></pre></div>
 </td></tr></table></p>
 <p>Then load the environment again:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">source</span> ~/.bashrc
@@ -474,7 +498,7 @@ You need to configure the following environment variable in your <code>.bashrc</
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../oidc_agent/" title="Setup oidc-agent" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../oidc_agent/" title="Configure oidc-agent" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -483,19 +507,19 @@ You need to configure the following environment variable in your <code>.bashrc</
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Setup oidc-agent
+                Configure oidc-agent
               </span>
             </div>
           </a>
         
         
-          <a href="../tosca_blocks/" title="Assembly the TOSCA template" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../tosca_blocks/" title="Hello world TOSCA template" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Assembly the TOSCA template
+                Hello world TOSCA template
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
