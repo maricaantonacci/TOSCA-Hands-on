@@ -113,7 +113,7 @@
 
 ### Kibana SoftwareComponent node
 
-``` yaml tab="tosca template excerpt" hl_lines="2"
+``` yaml tab="tosca template excerpt" hl_lines="2 8"
     kibana:
       type: tosca.nodes.indigo.Kibana
       properties:
