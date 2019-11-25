@@ -15,6 +15,7 @@ nav:
      - Setup oidc-agent: orchestrator/oidc_agent.md
      - Setup orchent: orchestrator/orchent.md
   - Run your first deployment:
+    - Assembly the TOSCA template: orchestrator/tosca_blocks.md
     - Example - Elasticsearch template: orchestrator/elasticsearch_example.md 
 repo_url: 'https://github.com/maricaantonacci/TOSCA-Hands-on'
 markdown_extensions: 
