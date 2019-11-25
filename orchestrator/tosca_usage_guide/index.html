@@ -355,6 +355,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../tosca_blocks/" title="Assembly the TOSCA template" class="md-nav__link">
+      Assembly the TOSCA template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../elasticsearch_example/" title="Example - Elasticsearch template" class="md-nav__link">
       Example - Elasticsearch template
     </a>
@@ -424,6 +436,7 @@
 </td></tr></table>
 
 <h4 id="node-template">Node template</h4>
+<p>A Node template is an instance of a specified Node Type and can provide customized properties, constraints or operations which override the defaults provided by its Node Type and its implementations.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -492,6 +505,121 @@
 </td></tr></table>
 
 <h4 id="example">Example</h4>
+<p><strong> tosca.nodes.Root </strong></p>
+<p>The TOSCA Root Node Type is the default type that all other TOSCA base Node Types derive from.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">tosca.nodes.Root</span><span class="p">:</span>
+  <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">The TOSCA Node Type all other TOSCA base Node Types derive from</span>
+  <span class="nt">attributes</span><span class="p">:</span>
+    <span class="nt">tosca_id</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">tosca_name</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">state</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="nt">capabilities</span><span class="p">:</span>
+    <span class="nt">feature</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.Node</span>
+  <span class="nt">requirements</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">dependency</span><span class="p">:</span>
+        <span class="nt">capability</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.Node</span>
+        <span class="nt">node</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.Root</span>
+                 <span class="l l-Scalar l-Scalar-Plain">relationship</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.relationships.DependsOn</span>
+                 <span class="l l-Scalar l-Scalar-Plain">occurrences</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">0</span><span class="p p-Indicator">,</span> <span class="nv">UNBOUNDED</span> <span class="p p-Indicator">]</span>
+  <span class="nt">interfaces</span><span class="p">:</span>
+    <span class="nt">Standard</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.interfaces.node.lifecycle.Standard</span>
+</pre></div>
+</td></tr></table>
+
+<p><strong> tosca.nodes.Compute </strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">tosca.nodes.Compute</span><span class="p">:</span>
+  <span class="nt">derived_from</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.Root</span>
+  <span class="nt">attributes</span><span class="p">:</span>
+    <span class="nt">private_address</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">public_address</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">networks</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">map</span>
+      <span class="nt">entry_schema</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.datatypes.network.NetworkInfo</span>
+    <span class="nt">ports</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">map</span>
+      <span class="nt">entry_schema</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.datatypes.network.PortInfo</span>
+  <span class="nt">requirements</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">local_storage</span><span class="p">:</span>
+        <span class="nt">capability</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.Attachment</span>
+        <span class="nt">node</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.BlockStorage</span>
+        <span class="nt">relationship</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.relationships.AttachesTo</span>
+        <span class="nt">occurrences</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span> <span class="nv">UNBOUNDED</span><span class="p p-Indicator">]</span> 
+  <span class="nt">capabilities</span><span class="p">:</span>
+    <span class="nt">host</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.Container</span>
+      <span class="nt">valid_source_types</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">tosca.nodes.SoftwareComponent</span><span class="p p-Indicator">]</span>
+    <span class="nt">endpoint</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.Endpoint.Admin</span>
+    <span class="nt">os</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.OperatingSystem</span>
+    <span class="nt">scalable</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.Scalable</span>
+    <span class="nt">binding</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.network.Bindable</span>
+</pre></div>
+</td></tr></table>
+
 <h3 id="capability-type">Capability Type</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -506,7 +634,7 @@
 </td></tr></table>
 
 <h4 id="example_1">Example</h4>
-<h3 id="capability-definition">Capability definition</h3>
+<p><strong> tosca.capabilities.Container </strong> 
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -518,21 +646,42 @@
  9
 10
 11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Simple definition is as follows:</span>
-<span class="nt">&lt;capability_defn_name&gt;</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;capability_type&gt;</span>
-
-<span class="c1"># The full definition is as follows:</span>
-<span class="nt">&lt;capability_defn_name&gt;</span><span class="p">:</span>
-  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;capability_type&gt;</span>
-  <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;capability_defn_description&gt;</span>
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">tosca.capabilities.Container</span><span class="p">:</span>
+  <span class="nt">derived_from</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.capabilities.Root</span>
   <span class="nt">properties</span><span class="p">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">&lt;property_values&gt;</span>
-  <span class="nt">attributes</span><span class="p">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">&lt;attribute_values&gt;</span>
-  <span class="nt">occurrences</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;occurrences&gt;</span>
+    <span class="nt">num_cpus</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">greater_or_equal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+    <span class="nt">cpu_frequency</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scalar-unit.frequency</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">greater_or_equal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1 GHz</span>
+    <span class="nt">disk_size</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scalar-unit.size</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">greater_or_equal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0 MB</span>
+    <span class="nt">mem_size</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scalar-unit.size</span>
+      <span class="nt">required</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">constraints</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">greater_or_equal</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0 MB</span>
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></p>
 <h3 id="relationship-type">Relationship Type</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -556,7 +705,119 @@
 </pre></div>
 </td></tr></table>
 
-<h4 id="example_2">Example</h4>
+<p>The basic relationship types are: </p>
+<ul>
+<li><strong>dependsOn</strong>: abstract type and its sub types:</li>
+<li><strong>hostedOn</strong>:  a node is contained within another</li>
+<li><strong>connectsTo</strong>: a node has a connection configured to another</li>
+</ul>
+<h3 id="functions">Functions</h3>
+<h4 id="get_input">get_input</h4>
+<p>The get_input function is used to retrieve the values of properties declared within the inputs section of a TOSCA Service Template.</p>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Grammar</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">get_input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">&lt;input_property_name&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">example</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">inputs</span><span class="p">:</span>
+  <span class="nt">cpus</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+  <span class="nt">node_templates</span><span class="p">:</span>
+    <span class="nt">my_server</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.Compute</span>
+      <span class="nt">properties</span><span class="p">:</span>
+        <span class="nt">num_cpus</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">cpus</span> <span class="p p-Indicator">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h4 id="get_property">get_property</h4>
+<p>The get_property function is used to retrieve property values between modelable entities defined in the same service template.
+Use this function for inputs parameters.</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Grammar</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">get_property</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">&lt;modelable_entity_name | SELF | SOURCE | TARGET | HOST&gt;</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">[</span><span class="nv">&lt;capability_name&gt;</span><span class="p p-Indicator">],</span> <span class="nv">&lt;property_path&gt;</span> <span class="p p-Indicator">]</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">example</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">node_templates</span><span class="p">:</span>
+  <span class="nt">mysql_database</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.Database</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sql_database1</span>
+
+
+  <span class="nt">wordpress</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.WebApplication.WordPress</span>
+    <span class="l l-Scalar l-Scalar-Plain">...</span>
+    <span class="nt">interfaces</span><span class="p">:</span>
+      <span class="nt">Standard</span><span class="p">:</span>
+        <span class="nt">configure</span><span class="p">:</span>
+          <span class="nt">inputs</span><span class="p">:</span>
+            <span class="nt">wp_db_name</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_property</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">mysql_database</span><span class="p p-Indicator">,</span> <span class="nv">name</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h4 id="get_attribute">get_attribute</h4>
+<p>The get_attribute function is used to retrieve the values of named attributes declared by the referenced node or relationship template name.</p>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">Grammar</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">get_attribute</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">&lt;modelable_entity_name | SELF | SOURCE | TARGET | HOST&gt;</span><span class="p p-Indicator">,</span> <span class="nv">&lt;attribute_name&gt;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h4 id="concat">concat</h4>
+<p>The concat function is used to concatenate two or more string values within a TOSCA service template.</p>
+<div class="superfences-tabs">
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0">Grammar</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">concat</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">&lt;string_value_expressions_*&gt;</span> <span class="p p-Indicator">]</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">example</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">outputs</span><span class="p">:</span>
+  <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Concatenate the URL for a server from other template values</span>
+  <span class="nt">server_url</span><span class="p">:</span>
+  <span class="nt">value</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> concat</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;http://&#39;</span><span class="p p-Indicator">,</span>
+                     <span class="nv">get_attribute</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">server</span><span class="p p-Indicator">,</span> <span class="nv">public_address</span> <span class="p p-Indicator">],</span>
+                     <span class="s">&#39;:&#39;</span><span class="p p-Indicator">,</span>
+                     <span class="nv">get_attribute</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span> <span class="nv">server</span><span class="p p-Indicator">,</span> <span class="nv">port</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
                 
                   
                 
