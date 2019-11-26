@@ -82,7 +82,7 @@
     interfaces:
       Standard:
         configure:
-          implementation: https://raw.githubusercontent.com/indigo-dc/tosca-types/k8s_add_es/artifacts/elk/elasticsearch_install.yml
+          implementation: https://raw.githubusercontent.com/indigo-dc/tosca-types/k8s/artifacts/elk/elasticsearch_install.yml
           inputs:
             es_version: { get_property: [ SELF, es_version ] }
             bind_host: { get_property: [ SELF, bind_address ] }
@@ -151,7 +151,7 @@
     interfaces:
       Standard:
         configure:
-          implementation: https://raw.githubusercontent.com/indigo-dc/tosca-types/k8s_add_es/artifacts/elk/kibana_install.yml
+          implementation: https://raw.githubusercontent.com/indigo-dc/tosca-types/k8s/artifacts/elk/kibana_install.yml
           inputs:
             kibana_version: { get_property: [ SELF, kibana_version ] }
             kibana_elasticsearch_url: { get_property: [ SELF, elasticsearch_url ] }
@@ -184,7 +184,7 @@ Click on the "TOSCA template" tab to see a possible solution.
 tosca_definitions_version: tosca_simple_yaml_1_0
 
 imports:
-  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s_add_es/custom_types.yaml
+  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s/custom_types.yaml
 
 description: >
   Start Elasticsearch + Kibana on a Virtual Machine
@@ -285,7 +285,7 @@ Click on the "TOSCA template" tab to see a possible solution.
 tosca_definitions_version: tosca_simple_yaml_1_0
 
 imports:
-  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s_add_es/custom_types.yaml
+  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s/custom_types.yaml
 
 description: >
   Start Elasticsearch + Kibana on separate Virtual Machines
