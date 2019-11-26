@@ -1349,13 +1349,64 @@
 </td></tr></table>
 
 <p>Monitor the status of the deployment:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>orchent depshow &lt;dep UUID&gt;
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>orchent depshow &lt;dep UUID&gt;
+</pre></div>
+</td></tr></table>
+You could also connect to the dashboard to follow the deployment log:</p>
+<p><code>dashboard URL: https://dodas-paas.cloud.ba.infn.it</code></p>
+<p>What do you see in the log?</p>
+<p>Once your deployment is finalized, you will get the outputs. E.g.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="hll">$ orchent depshow 11ea1028-4029-d1bf-a0d7-02426e42bf8c
+</span>
+Deployment <span class="o">[</span>11ea1028-4029-d1bf-a0d7-02426e42bf8c<span class="o">]</span>:
+  status: CREATE_COMPLETE
+  creation time: <span class="m">2019</span>-11-26T08:39+0000
+  update time: <span class="m">2019</span>-11-26T08:52+0000
+  callback:
+  status reason:
+  task: NONE
+  CloudProviderName: RECAS-BARI
+  outputs:
+  <span class="o">{</span>
+<span class="hll">      <span class="s2">&quot;kibana_endpoint&quot;</span>: <span class="s2">&quot;http://90.147.75.103:5601&quot;</span>,
+</span>      <span class="s2">&quot;kibana_node_creds&quot;</span>: <span class="o">{</span>
+          <span class="s2">&quot;token&quot;</span>: <span class="s2">&quot;-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAqCKFbwaYJq57fgcZQ0/xKT75J9S4GRU9 [....]\n-----END RSA PRIVATE KEY-----&quot;</span>,
+          <span class="s2">&quot;token_type&quot;</span>: <span class="s2">&quot;private_key&quot;</span>,
+          <span class="s2">&quot;user&quot;</span>: <span class="s2">&quot;cloudadm&quot;</span>
+      <span class="o">}</span>,
+      <span class="s2">&quot;kibana_node_ip&quot;</span>: <span class="s2">&quot;90.147.75.103&quot;</span>
+  <span class="o">}</span>
+  links:
+    self <span class="o">[</span>https://dodas-paas.cloud.ba.infn.it/orchestrator/deployments/11ea1028-4029-d1bf-a0d7-02426e42bf8c<span class="o">]</span>
+    resources <span class="o">[</span>https://dodas-paas.cloud.ba.infn.it/orchestrator/deployments/11ea1028-4029-d1bf-a0d7-02426e42bf8c/resources<span class="o">]</span>
+    template <span class="o">[</span>https://dodas-paas.cloud.ba.infn.it/orchestrator/deployments/11ea1028-4029-d1bf-a0d7-02426e42bf8c/template<span class="o">]</span>
 </pre></div>
 </td></tr></table>
 
-<p>You could also connect to the dashboard to follow the deployment log:</p>
-<p><code>dashboard URL: https://dodas-paas.cloud.ba.infn.it</code></p>
-<p>What do you see in the log?</p>
+<p>Verify the deployment visiting the kibana endpoint and login using the username <code>elastic</code> and the password set for the input <code>es_password</code>. </p>
                 
                   
                 
