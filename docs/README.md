@@ -9,7 +9,7 @@ Marica Antonacci (marica.antonacci@ba.infn.it)
 
 - [Overview](orchestrator/overview.md)
 - Environment setup:
-    - [Configure oidc-agent](orchestrator/oidc-agent.md)
+    - [Configure oidc-agent](orchestrator/oidc_agent.md)
     - [Configure orchent](orchestrator/orchent.md)
 - Run your first deployment:
     - [Hello world TOSCA template](orchestrator/tosca_blocks.md)
