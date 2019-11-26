@@ -2,6 +2,12 @@
 
 ## Installing Elasticsearch and Kibana with ansible
 
+We will be using the following ansible roles available on ansible galaxy hub:
+
+ - elastic.elasticsearch,7.4.1
+ - maricaantonacci.kibana,7.4.1
+
+
 ``` yaml tab="Elasticsearch playbook"
 - name: Simple Elasticsearch Example
   hosts: localhost
@@ -18,7 +24,11 @@
     es_users:
       native:
         kibana:
+          password: 12qwas
 ```
+
+!!! Warning
+    Take care of setting proper passwords in the playbook
 
 ``` yaml tab="Kibana playbook"
 - name: Simple Kibana Example
