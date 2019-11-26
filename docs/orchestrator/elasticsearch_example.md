@@ -414,10 +414,39 @@ Monitor the status of the deployment:
 ``` bash
 orchent depshow <dep UUID>
 ```
-
 You could also connect to the dashboard to follow the deployment log:
 
 `dashboard URL: https://dodas-paas.cloud.ba.infn.it`
 
 What do you see in the log?
 
+Once your deployment is finalized, you will get the outputs. E.g.
+
+``` bash hl_lines="1 13"
+$ orchent depshow 11ea1028-4029-d1bf-a0d7-02426e42bf8c
+
+Deployment [11ea1028-4029-d1bf-a0d7-02426e42bf8c]:
+  status: CREATE_COMPLETE
+  creation time: 2019-11-26T08:39+0000
+  update time: 2019-11-26T08:52+0000
+  callback:
+  status reason:
+  task: NONE
+  CloudProviderName: RECAS-BARI
+  outputs:
+  {
+      "kibana_endpoint": "http://90.147.75.103:5601",
+      "kibana_node_creds": {
+          "token": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAqCKFbwaYJq57fgcZQ0/xKT75J9S4GRU9 [....]\n-----END RSA PRIVATE KEY-----",
+          "token_type": "private_key",
+          "user": "cloudadm"
+      },
+      "kibana_node_ip": "90.147.75.103"
+  }
+  links:
+    self [https://dodas-paas.cloud.ba.infn.it/orchestrator/deployments/11ea1028-4029-d1bf-a0d7-02426e42bf8c]
+    resources [https://dodas-paas.cloud.ba.infn.it/orchestrator/deployments/11ea1028-4029-d1bf-a0d7-02426e42bf8c/resources]
+    template [https://dodas-paas.cloud.ba.infn.it/orchestrator/deployments/11ea1028-4029-d1bf-a0d7-02426e42bf8c/template]
+```
+
+Verify the deployment visiting the kibana endpoint and login using the username `elastic` and the password set for the input `es_password`. 
