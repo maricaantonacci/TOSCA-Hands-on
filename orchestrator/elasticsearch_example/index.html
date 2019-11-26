@@ -604,6 +604,11 @@
                 
                 <h3 id="_1"><a href="../..">◀</a></h3>
 <h2 id="installing-elasticsearch-and-kibana-with-ansible">Installing Elasticsearch and Kibana with ansible</h2>
+<p>We will be using the following ansible roles available on ansible galaxy hub:</p>
+<ul>
+<li>elastic.elasticsearch,7.4.1</li>
+<li>maricaantonacci.kibana,7.4.1</li>
+</ul>
 <div class="superfences-tabs">
 <input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
 <label for="__tab_1_0">Elasticsearch playbook</label>
@@ -621,7 +626,8 @@
 12
 13
 14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Simple Elasticsearch Example</span>
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Simple Elasticsearch Example</span>
   <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
   <span class="nt">roles</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">role</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elastic.elasticsearch</span>
@@ -636,10 +642,17 @@
     <span class="nt">es_users</span><span class="p">:</span>
       <span class="nt">native</span><span class="p">:</span>
         <span class="nt">kibana</span><span class="p">:</span>
+          <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12qwas</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">Kibana playbook</label>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Take care of setting proper passwords in the playbook</p>
+</div>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">Kibana playbook</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -661,8 +674,8 @@
 <h2 id="modeling-the-topology-with-tosca">Modeling the topology with TOSCA</h2>
 <h3 id="elasticsearch-softwarecomponent-node">Elasticsearch SoftwareComponent node</h3>
 <div class="superfences-tabs">
-<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">tosca template excerpt</label>
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">tosca template excerpt</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -682,8 +695,8 @@
         <span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">server</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">tosca custom type</label>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">tosca custom type</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -769,8 +782,8 @@
             <span class="nt">kibana_system_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_property</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">SELF</span><span class="p p-Indicator">,</span> <span class="nv">kibana_system_password</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_2" type="radio" id="__tab_2_2" />
-<label for="__tab_2_2">ansible artefact</label>
+<input name="__tabs_3" type="radio" id="__tab_3_2" />
+<label for="__tab_3_2">ansible artefact</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -807,8 +820,8 @@
 </div>
 <h3 id="kibana-softwarecomponent-node">Kibana SoftwareComponent node</h3>
 <div class="superfences-tabs">
-<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
-<label for="__tab_3_0">tosca template excerpt</label>
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0">tosca template excerpt</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -826,8 +839,8 @@
 <span class="hll">        <span class="p p-Indicator">-</span> <span class="nt">dependency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
 </span></pre></div>
 </td></tr></table></div>
-<input name="__tabs_3" type="radio" id="__tab_3_1" />
-<label for="__tab_3_1">tosca custom type</label>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">tosca custom type</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -893,8 +906,8 @@
             <span class="nt">kibana_elasticsearch_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_property</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">SELF</span><span class="p p-Indicator">,</span> <span class="nv">elasticsearch_password</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_3" type="radio" id="__tab_3_2" />
-<label for="__tab_3_2">ansible artefact</label>
+<input name="__tabs_4" type="radio" id="__tab_4_2" />
+<label for="__tab_4_2">ansible artefact</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -913,13 +926,13 @@
 <p><em>Don't forget to request port 5601 for accessing kibana dashboard!</em></p>
 <h4 id="1-all-in-one-installation">1. All-in-One installation</h4>
 <div class="superfences-tabs">
-<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
-<label for="__tab_4_0"> </label>
+<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
+<label for="__tab_5_0"> </label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Click on the &quot;TOSCA template&quot; tab to see a possible solution.</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_4" type="radio" id="__tab_4_1" />
-<label for="__tab_4_1">TOSCA template</label>
+<input name="__tabs_5" type="radio" id="__tab_5_1" />
+<label for="__tab_5_1">TOSCA template</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1108,13 +1121,13 @@
 </div>
 <h4 id="2-installation-on-separate-servers">2. Installation on separate servers</h4>
 <div class="superfences-tabs">
-<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
-<label for="__tab_5_0"> </label>
+<input name="__tabs_6" type="radio" id="__tab_6_0" checked="checked" />
+<label for="__tab_6_0"> </label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Click on the &quot;TOSCA template&quot; tab to see a possible solution.</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_5" type="radio" id="__tab_5_1" />
-<label for="__tab_5_1">TOSCA template</label>
+<input name="__tabs_6" type="radio" id="__tab_6_1" />
+<label for="__tab_6_1">TOSCA template</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
   2
   3
