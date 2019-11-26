@@ -244,7 +244,7 @@ topology_template:
         elasticsearch_password: { get_input: kibana_password }
       requirements:
         - host: kibana_es_server
-        - esearch_endpoint: elasticsearch
+        - dependency: elasticsearch
 
     kibana_es_server:
       type: tosca.nodes.indigo.Compute
@@ -346,7 +346,7 @@ topology_template:
         elasticsearch_url: { concat: [ 'http://', { get_attribute: [ es_server, private_address, 0 ] }, ":9200" ] }
       requirements:
         - host: kibana_server
-        - esearch_endpoint: elasticsearch
+        - dependency: elasticsearch
 
     es_server:
       type: tosca.nodes.indigo.Compute
