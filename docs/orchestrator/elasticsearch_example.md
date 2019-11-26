@@ -184,7 +184,7 @@ Click on the "TOSCA template" tab to see a possible solution.
 tosca_definitions_version: tosca_simple_yaml_1_0
 
 imports:
-  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s/custom_types.yaml
+  - indigo_custom_types: https://raw.githubusercontent.com/indigo-dc/tosca-types/k8s/custom_types.yaml
 
 description: >
   Start Elasticsearch + Kibana on a Virtual Machine
@@ -285,7 +285,7 @@ Click on the "TOSCA template" tab to see a possible solution.
 tosca_definitions_version: tosca_simple_yaml_1_0
 
 imports:
-  - indigo_custom_types: https://raw.githubusercontent.com/maricaantonacci/tosca-types/k8s/custom_types.yaml
+  - indigo_custom_types: https://raw.githubusercontent.com/indigo-dc/tosca-types/k8s/custom_types.yaml
 
 description: >
   Start Elasticsearch + Kibana on separate Virtual Machines
