@@ -1074,7 +1074,7 @@
         <span class="nt">elasticsearch_password</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> get_input</span><span class="p">:</span> <span class="nv">kibana_password</span> <span class="p p-Indicator">}</span>
       <span class="nt">requirements</span><span class="p">:</span>
         <span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kibana_es_server</span>
-        <span class="p p-Indicator">-</span> <span class="nt">esearch_endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
+        <span class="p p-Indicator">-</span> <span class="nt">dependency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
 
     <span class="nt">kibana_es_server</span><span class="p">:</span>
       <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Compute</span>
@@ -1284,7 +1284,7 @@
         <span class="nt">elasticsearch_url</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> concat</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="s">&#39;http://&#39;</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">{</span><span class="nt"> get_attribute</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">es_server</span><span class="p p-Indicator">,</span> <span class="nv">private_address</span><span class="p p-Indicator">,</span> <span class="nv">0</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">},</span> <span class="s">&quot;:9200&quot;</span> <span class="p p-Indicator">]</span> <span class="p p-Indicator">}</span>
       <span class="nt">requirements</span><span class="p">:</span>
         <span class="p p-Indicator">-</span> <span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kibana_server</span>
-        <span class="p p-Indicator">-</span> <span class="nt">esearch_endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
+        <span class="p p-Indicator">-</span> <span class="nt">dependency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch</span>
 
     <span class="nt">es_server</span><span class="p">:</span>
       <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tosca.nodes.indigo.Compute</span>
